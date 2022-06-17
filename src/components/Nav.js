@@ -1,38 +1,32 @@
 import React, { useEffect, useState } from "react";
 
 export default function Nav() {
-  const [users, setUsers] = useState({
-    image: "",
-    first: "",
-    last: "",
-    city: "",
-    email: "",
-    phone: "",
-  });
+  const [users, setUsers] = useState(
+    () => JSON.parse(localStorage.getItem("key")) || []
+  );
+
+  const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    for (let i = 0; i < 5; i++) {
+    return setAllUsers(() => {
+      return users;
+    });
+  }, []);
+
+  useEffect(() => {
+    const newArr = [];
+    for (let i = 0; i < 10; i++) {
       fetch("https://randomuser.me/api")
         .then((res) => res.json())
         .then((data) => {
-          setUsers((prevState) => {
-            return {
-              ...prevState,
-              image: data.results[0].picture.thumbnail,
-              first: data.results[0].name.first,
-              last: data.results[0].name.last,
-              city: data.results[0].location.city,
-              email: data.results[0].email,
-              phone: data.results[0].phone,
-            };
-          });
+          newArr.push(data);
+          setUsers(localStorage.setItem("key", JSON.stringify(newArr)));
         });
     }
+
+    return localStorage.clear();
   }, []);
 
-  console.log(`first: ${users.first}`);
-  console.log(`last: ${users.last}`);
-  console.log(`city: ${users.city}`);
   return (
     <div>
       <table>
@@ -47,16 +41,20 @@ export default function Nav() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <img src={users.image} alt="" />
-            </td>
-            <td>{users.first}</td>
-            <td>{users.last}</td>
-            <td>{users.city}</td>
-            <td>{users.email}</td>
-            <td>{users.phone}</td>
-          </tr>
+          {allUsers.map((item, i) => {
+            return (
+              <tr key={i}>
+                <td>
+                  <img src={item.results[0].picture.thumbnail} alt="" />
+                </td>
+                <td>{item.results[0].name.first}</td>
+                <td>{item.results[0].name.last}</td>
+                <td>{item.results[0].location.city}</td>
+                <td>{item.results[0].email}</td>
+                <td>{item.results[0].phone}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
