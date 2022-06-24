@@ -28,10 +28,10 @@ export default function Nav() {
   }, []);
 
   return (
-    <div>
-      <table>
+    <div className="nav">
+      <table className="tbl">
         <thead>
-          <tr>
+          <tr className="tr">
             <th>Image</th>
             <th>First Name</th>
             <th>Last Name</th>
