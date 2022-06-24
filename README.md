@@ -24,11 +24,6 @@ It is a React JS application that allows a user to view the entire employee dire
 
 - API
 
-## **Notes Page**
+## **Employee Directory**
 
-![![Notes]()](https://github.com/noarrassam/NoteTaker-Express-JS/blob/main/images/2.png)
-![![Notes]()](https://github.com/noarrassam/NoteTaker-Express-JS/blob/main/images/3.png)
-![![Notes]()](https://github.com/noarrassam/NoteTaker-Express-JS/blob/main/images/4.png)
-![![Notes]()](https://github.com/noarrassam/NoteTaker-Express-JS/blob/main/images/5.png)
-![![Notes]()](https://github.com/noarrassam/NoteTaker-Express-JS/blob/main/images/6.png)
-![![Notes]()](https://github.com/noarrassam/NoteTaker-Express-JS/blob/main/images/7.png)
+![![Directory]()](https://github.com/noarrassam/employee-directory/blob/main/images/output.png)
