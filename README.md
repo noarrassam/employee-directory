@@ -12,17 +12,17 @@ It is a React JS application that allows a user to view the entire employee dire
 
 - CSS
 
+- Bootstrap-CDN
+
 - React JS
 
 - Components
 
-- useState
-
-- useEffect
+- React Hooks: useState, useEffect
 
 - Localstorage
 
-- API
+- API Fetch method
 
 ## **Employee Directory**
 

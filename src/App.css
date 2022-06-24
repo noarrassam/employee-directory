@@ -4,25 +4,11 @@ body {
   text-align: center;
 }
 
-table,
-th,
-td {
-  border: 1px solid;
-}
-
-table {
-  width: 100%;
-  margin-top: 50px;
-  background-color: white;
-}
-
-tr {
+.table-div{
   display: grid;
-  grid-template-columns: 100px 150px 150px 150px 250px 200px;
-  justify-content: space-evenly;
 }
 
-.text {
+.text-center {
   width: 100%;
   color: orange;
 }
